@@ -1,0 +1,2654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wulan Winata · Strategic Partnerships &amp; Community Growth</title>
+<meta name="description" content="Partnerships builder and community architect with 8+ years turning connections into ecosystems, across banking, tech, Web3, crypto, and influencer marketing.">
+<style>
+/* ============================================================
+   Wulan Winata · Portfolio
+   Design system ported from the renlenon.vercel.app layout.
+   Vanilla CSS, no build step, no external requests.
+   ============================================================ */
+
+/* ---------- Tokens ---------- */
+:root {
+  --ink: #121212;
+
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5dc;
+  --gray-400: #99a1af;
+  --gray-500: #6a7282;
+  --gray-600: #4a5565;
+  --gray-700: #364153;
+  --gray-800: #1e2939;
+  --gray-900: #101828;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: var(--gray-100);
+  --text: var(--gray-900);
+  --text-strong: #000000;
+  --text-muted: var(--gray-500);
+  --text-faint: var(--gray-400);
+  --text-mid: var(--gray-700);
+  --border: var(--gray-200);
+  --border-dashed: var(--gray-300);
+  --border-soft: var(--gray-100);
+  --divider: var(--gray-200);
+
+  --header-bg: rgba(255, 255, 255, 0.7);
+  --btn-bg: var(--ink);
+  --btn-fg: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  --accent: #1d9bf0;
+  --content-width: 48rem;
+
+  --dock-bg: rgba(255, 255, 255, 0.62);
+  --dock-border: rgba(0, 0, 0, 0.09);
+  --dock-shadow: 0 8px 30px rgb(0 0 0 / 0.12), 0 2px 8px rgb(0 0 0 / 0.06);
+  --dock-hover: rgba(0, 0, 0, 0.05);
+}
+
+html.dark {
+  --bg: var(--ink);
+  --surface: var(--ink);
+  --surface-2: #1c1c1c;
+  --text: #ffffff;
+  --text-strong: #ffffff;
+  --text-muted: var(--gray-400);
+  --text-faint: var(--gray-500);
+  --text-mid: var(--gray-300);
+  --border: var(--gray-700);
+  --border-dashed: var(--gray-700);
+  --border-soft: var(--gray-800);
+  --divider: var(--gray-700);
+
+  --header-bg: rgba(18, 18, 18, 0.8);
+  --btn-bg: #ffffff;
+  --btn-fg: #000000;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+
+  --dock-bg: rgba(30, 30, 30, 0.6);
+  --dock-border: rgba(255, 255, 255, 0.13);
+  --dock-shadow: 0 8px 30px rgb(0 0 0 / 0.5), 0 2px 8px rgb(0 0 0 / 0.35);
+  --dock-hover: rgba(255, 255, 255, 0.09);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, p { margin: 0; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+::selection { background: var(--text); color: var(--bg); }
+
+/* ---------- Layout ---------- */
+.wrap {
+  max-width: var(--content-width);
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) { .wrap { padding-inline: 1.5rem; } }
+
+main.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 640px) { main.wrap { gap: 4.5rem; } }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.site-header nav {
+  max-width: var(--content-width);
+  width: 100%;
+  margin-inline: auto;
+  padding: .75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (min-width: 640px) { .site-header nav { padding: 1rem 1.5rem; } }
+
+.brand {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  transition: color .2s;
+}
+.nav-right { display: flex; align-items: center; gap: .75rem; }
+@media (min-width: 640px) { .nav-right { gap: 1.25rem; } }
+
+.nav-links { display: flex; align-items: center; gap: .75rem; }
+@media (min-width: 640px) { .nav-links { gap: 1rem; } }
+
+.nav-links a {
+  font-size: .75rem;
+  white-space: nowrap;
+  color: var(--text-faint);
+  transition: color .2s;
+}
+@media (min-width: 640px) { .nav-links a { font-size: .875rem; } }
+.nav-links a:hover { color: var(--text); }
+.nav-links a[aria-current="page"] { color: var(--text); }
+
+.nav-divider { width: 1px; height: 1.25rem; background: var(--divider); }
+
+/* theme toggle */
+.theme-toggle {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: color .2s;
+}
+.theme-toggle:hover { color: var(--text); }
+.theme-toggle svg {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  transition: all .5s;
+}
+.theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+.theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg) scale(.5); }
+html.dark .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg) scale(.5); }
+html.dark .theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
+
+/* ---------- Section headings ---------- */
+.section { width: 100%; }
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -.025em;
+  color: var(--text);
+}
+@media (min-width: 640px) { .section-title { font-size: 1.875rem; } }
+
+.link-more {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  font-size: .875rem;
+  color: var(--text-faint);
+  transition: color .2s;
+  white-space: nowrap;
+}
+.link-more:hover { color: var(--text); }
+.link-more svg { width: .875rem; height: .875rem; transition: transform .2s; }
+.link-more:hover svg { transform: translateX(4px); }
+
+.eyebrow {
+  font-size: .6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--text-muted);
+}
+
+/* ---------- Hero ---------- */
+.hero { padding: 1.5rem 0 2rem; }
+@media (min-width: 640px) { .hero { padding: 4rem 0 2rem; } }
+
+.hero-inner { display: flex; flex-direction: column; gap: 1.5rem; }
+@media (min-width: 640px) { .hero-inner { gap: 2.5rem; } }
+
+.hero-id {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) { .hero-id { gap: 1.5rem; } }
+
+.avatar {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+@media (min-width: 640px) { .avatar { height: 10rem; width: 10rem; } }
+html.dark .avatar { border-color: var(--gray-500); }
+
+.avatar-mono {
+  font-size: 2.75rem;
+  font-weight: 300;
+  letter-spacing: .06em;
+  color: var(--text);
+  background: linear-gradient(140deg, var(--surface-2), var(--surface));
+  width: 100%; height: 100%;
+  display: grid; place-items: center;
+  transition: transform .5s ease, opacity .4s ease;
+}
+@media (min-width: 640px) { .avatar-mono { font-size: 3.25rem; } }
+
+.avatar-alt {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: .15rem;
+  opacity: 0;
+  transition: opacity .4s ease;
+  background: linear-gradient(140deg, #1d9bf0 0%, #7c5cff 55%, #ff7ac6 100%);
+  color: #fff;
+  text-align: center;
+  padding: .5rem;
+}
+.avatar-alt span:first-child { font-size: 1.6rem; }
+.avatar-alt span:last-child {
+  font-size: .5rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+}
+.avatar:hover .avatar-alt, .avatar:focus-visible .avatar-alt { opacity: 1; }
+.avatar:hover .avatar-mono { transform: scale(1.06); }
+
+.hero-name {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -.02em;
+  color: var(--text);
+  margin-bottom: .6rem;
+}
+@media (min-width: 640px) { .hero-name { font-size: 1.75rem; } }
+.verified { width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+.hero-alias {
+  font-size: .8125rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  align-self: center;
+  white-space: nowrap;
+}
+@media (min-width: 640px) { .hero-alias { font-size: .875rem; } }
+
+.social-row { display: flex; align-items: flex-start; gap: .75rem; }
+.social-row a {
+  opacity: .7;
+  color: var(--text-mid);
+  transition: opacity .2s, transform .2s, color .2s;
+  display: inline-flex;
+}
+.social-row a:hover { opacity: 1; transform: translateY(-2px); }
+.social-row a:hover.s-linkedin { color: #0a66c2; }
+.social-row a:hover.s-mail { color: #ea4335; }
+.social-row a:hover.s-wa { color: #25d366; }
+.social-row svg { width: 1.25rem; height: 1.25rem; }
+
+.hero-copy { display: flex; flex-direction: column; gap: 1.25rem; }
+@media (min-width: 640px) { .hero-copy { gap: 1.5rem; } }
+
+.hero-title {
+  max-width: 100%;
+  font-size: 1.7rem;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: 1.15;
+  color: var(--text);
+}
+@media (min-width: 640px) { .hero-title { font-size: 2.05rem; } }
+@media (min-width: 768px) { .hero-title { font-size: 2.15rem; } }
+.hero-title span {
+  font-size: .95em;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.hero-lede {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+@media (min-width: 640px) { .hero-lede { font-size: 1.125rem; line-height: 2; } }
+
+/* inline dashed chips inside prose */
+.chip-inline {
+  background: var(--surface);
+  margin-left: .25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  border-radius: .375rem;
+  border: 1px dashed var(--border-dashed);
+  padding: .25rem .5rem;
+  font-size: .75rem;
+  line-height: 1.2;
+  color: var(--text-mid);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+@media (min-width: 640px) { .chip-inline { padding: .25rem .625rem; font-size: .875rem; } }
+html.dark .chip-inline { color: var(--gray-200); }
+.chip-inline svg { width: .9em; height: .9em; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  width: fit-content;
+  border-radius: .5rem;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  padding: .625rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: transform .2s;
+}
+.btn:hover { transform: scale(1.03); }
+.btn svg { width: 1rem; height: 1rem; transition: transform .2s; }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  width: fit-content;
+  border-radius: .5rem;
+  border: 1px solid var(--border);
+  padding: .625rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  transition: transform .2s, border-color .2s;
+}
+.btn-ghost:hover { transform: scale(1.03); border-color: var(--text-faint); }
+.btn-ghost svg { width: 1rem; height: 1rem; }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* ---------- Stats ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+}
+@media (min-width: 640px) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; } }
+
+.stat {
+  border: 1px dashed var(--border-dashed);
+  border-radius: .75rem;
+  background: var(--surface);
+  padding: 1rem;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.stat-num {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -.03em;
+  color: var(--text);
+}
+@media (min-width: 640px) { .stat-num { font-size: 1.75rem; } }
+.stat-label {
+  margin-top: .35rem;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+/* ---------- Featured card ---------- */
+.featured {
+  width: 100%;
+  overflow: hidden;
+  border-radius: .75rem;
+  border: 1px dashed var(--border-dashed);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.featured-grid { display: grid; gap: 0; }
+@media (min-width: 640px) {
+  .featured-grid { grid-template-columns: 300px 1fr; align-items: stretch; }
+}
+.featured-visual {
+  position: relative;
+  min-height: 10rem;
+  background: linear-gradient(150deg, #0f172a 0%, #1d3b6e 45%, #1d9bf0 100%);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+.featured-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(255,255,255,.35) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.25) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,.2) 0 1.5px, transparent 2px);
+  background-size: 90px 90px, 130px 130px, 70px 70px;
+  opacity: .8;
+}
+.featured-visual-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+.featured-visual-num {
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+.featured-visual-cap {
+  margin-top: .5rem;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.featured-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .75rem;
+  padding: 1.25rem;
+}
+@media (min-width: 640px) { .featured-body { padding: 1.5rem; } }
+.featured-title {
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: -.025em;
+  color: var(--text);
+}
+@media (min-width: 640px) { .featured-title { font-size: 1.5rem; } }
+.featured-desc { font-size: .875rem; line-height: 1.6; color: var(--text-muted); }
+
+/* ---------- Pills ---------- */
+.pill-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  padding: .25rem .625rem;
+  font-size: .6875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+html.dark .pill { color: var(--gray-300); }
+
+.pill-lg {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: .25rem .75rem;
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--text-mid);
+}
+html.dark .pill-lg { color: var(--gray-200); }
+
+/* ---------- Experience list ---------- */
+.exp-list { display: flex; flex-direction: column; gap: 1.75rem; }
+@media (min-width: 640px) { .exp-list { gap: 2rem; } }
+
+.exp-row { display: block; }
+@media (min-width: 640px) {
+  .exp-row { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; }
+}
+.exp-date {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  white-space: nowrap;
+  margin-bottom: .25rem;
+}
+@media (min-width: 640px) { .exp-date { margin-bottom: 0; padding-top: .25rem; } }
+.exp-role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+}
+@media (min-width: 640px) { .exp-role { font-size: 1.0625rem; } }
+.exp-org { margin-top: .25rem; font-size: .875rem; font-weight: 500; color: var(--text-mid); }
+.exp-place { margin-top: .125rem; font-size: .875rem; color: var(--text-muted); }
+
+.exp-points {
+  margin: .75rem 0 0;
+  padding-left: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  font-size: .875rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.exp-points li::marker { color: var(--text-faint); }
+
+/* ---------- Metric chips ---------- */
+.exp-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .7rem;
+}
+.exp-metric {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .32rem;
+  border: 1px dashed var(--border-dashed);
+  background: var(--surface);
+  border-radius: 9999px;
+  padding: .26rem .62rem;
+  transition: border-color .2s, background-color .2s;
+}
+.exp-link:hover .exp-metric { border-color: var(--text-faint); }
+.exp-metric-num {
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.exp-metric-lab {
+  font-size: .5625rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+.card-body .exp-metrics { margin-top: .5rem; }
+
+/* ---------- Company logos ---------- */
+.logo {
+  position: relative;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: .6rem;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, var(--logo-a, #1e293b), var(--logo-b, #475569));
+  border: 1px solid var(--border);
+  transition: transform .25s cubic-bezier(.2,.7,.3,1);
+}
+.logo::before {
+  content: attr(data-mono);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  color: #fff;
+}
+.logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  padding: .2rem;
+}
+/* full-bleed artwork (dark square images) rather than a wordmark on white */
+.logo img[data-fit="cover"] {
+  object-fit: cover;
+  background: transparent;
+  padding: 0;
+}
+/* very wide wordmarks: crop to the icon at the left so it stays legible at 40px */
+.logo img[data-fit="mark"] {
+  object-fit: cover;
+  object-position: left center;
+  background: #fff;
+  padding: .12rem;
+}
+.exp-link:hover .logo, .card:hover .logo { transform: scale(1.06); }
+
+.exp-head { display: flex; align-items: flex-start; gap: .75rem; }
+.card-head { display: flex; align-items: center; gap: .625rem; }
+.card-head .card-role { margin-top: .15rem; }
+
+/* ---------- Card grid (projects / freelance) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) {
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: .5rem;
+  background: var(--surface);
+  border: 1px dashed var(--border-dashed);
+  padding: .5rem;
+  border-radius: .75rem;
+  width: 100%;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+.card-thumb {
+  display: block;
+  height: 8rem;
+  border-radius: .5rem;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-align: center;
+  padding: .75rem;
+}
+.card-thumb-label {
+  position: relative;
+  z-index: 1;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .9;
+}
+.card-thumb-mono {
+  position: relative;
+  z-index: 1;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+.card-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.g1 { background: linear-gradient(140deg, #0f172a, #2563eb); }
+.g2 { background: linear-gradient(140deg, #3b0764, #a21caf); }
+.g3 { background: linear-gradient(140deg, #052e16, #16a34a); }
+.g4 { background: linear-gradient(140deg, #431407, #ea580c); }
+.g5 { background: linear-gradient(140deg, #0c4a6e, #06b6d4); }
+.g6 { background: linear-gradient(140deg, #4c0519, #e11d48); }
+.g7 { background: linear-gradient(140deg, #1e1b4b, #6366f1); }
+.g8 { background: linear-gradient(140deg, #422006, #ca8a04); }
+
+.card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding-inline: .5rem;
+  margin-top: .75rem;
+  padding-bottom: .35rem;
+}
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  color: var(--text);
+  line-height: 1.15;
+}
+.card-date {
+  font-size: .625rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-faint); margin-bottom: .2rem;
+}
+.card-role { margin-top: .25rem; font-size: .75rem; font-weight: 600; color: var(--text-mid); }
+.card-desc { margin-top: .25rem; font-size: .875rem; line-height: 1.5; color: var(--text-muted); }
+.card-meta {
+  margin-top: .75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+.badge-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  border-radius: 9999px;
+  background: var(--surface-2);
+  padding: .15rem .5rem;
+  font-size: .5625rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.badge-progress::before {
+  content: "";
+  width: .35rem; height: .35rem;
+  border-radius: 9999px;
+  background: #22c55e;
+}
+.card-link {
+  margin-top: auto;
+  padding-top: .75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  transition: color .2s;
+}
+.card-link:hover { color: var(--text); }
+.card-link svg { width: .75rem; height: .75rem; transition: transform .2s; }
+.card-link:hover svg { transform: translate(2px, -2px); }
+
+/* ---------- Technologies marquee ---------- */
+.tech-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3rem, black calc(100% - 3rem), transparent);
+  mask-image: linear-gradient(to right, transparent, black 3rem, black calc(100% - 3rem), transparent);
+}
+.tech-lane { overflow: hidden; }
+.tech-track {
+  display: flex;
+  width: max-content;
+  gap: .625rem;
+  padding-right: .5rem;
+  animation: marquee 46s linear infinite;
+}
+@media (min-width: 640px) { .tech-track { gap: .875rem; padding-right: .75rem; } }
+.tech-track.reverse { animation-direction: reverse; }
+/* the single all-in-one lane carries every tool, so give it a slower sweep */
+.tech-track.all { animation-duration: 95s; }
+.tech-lane:hover .tech-track { animation-play-state: paused; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tech-track { animation: none; }
+  .tech-lane { overflow-x: auto; }
+}
+
+.tech-chip {
+  background: var(--surface);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border-radius: .5rem;
+  border: 1px dashed var(--border-dashed);
+  padding: .4375rem .875rem;
+  font-size: .95rem;
+  line-height: 1;
+  color: var(--text-mid);
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  white-space: nowrap;
+}
+html.dark .tech-chip { color: var(--gray-200); background: #1a1a1a; }
+.tech-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.tech-dot {
+  width: .5rem; height: .5rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* grouped view */
+.tech-groups { display: flex; flex-direction: column; gap: 1.75rem; }
+.tech-group-title {
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: .75rem;
+}
+.tech-group-items { display: flex; flex-wrap: wrap; gap: .625rem; }
+
+.icon-btn {
+  width: 2.25rem; height: 2.25rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--text-faint);
+  transition: color .2s;
+  border-radius: .5rem;
+}
+.icon-btn:hover { color: var(--text); }
+.icon-btn svg { width: 1rem; height: 1rem; }
+
+/* ---------- Two column split (about / outside / contact) ---------- */
+.split {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .split { grid-template-columns: 1.05fr .95fr; align-items: flex-start; }
+  .split.center { align-items: center; }
+}
+.prose {
+  font-size: .875rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 36rem;
+}
+@media (min-width: 640px) { .prose { font-size: 1rem; } }
+.prose + .prose { margin-top: .875rem; }
+
+.inline-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border-dashed);
+  text-underline-offset: 3px;
+  transition: text-decoration-color .2s;
+}
+.inline-link:hover { text-decoration-color: var(--text); }
+
+/* fact cards */
+.facts { display: flex; flex-direction: column; gap: .75rem; }
+.fact {
+  border: 1px solid var(--border);
+  border-radius: .75rem;
+  background: var(--surface);
+  padding: .875rem 1rem;
+  transition: transform .2s, border-color .2s;
+}
+.fact:hover { transform: translateY(-2px); border-color: var(--text-faint); }
+.fact-k {
+  font-size: .5625rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.fact-v { margin-top: .25rem; font-size: .875rem; color: var(--text); }
+
+/* ---------- Competency grid (compact, used on credentials page) ---------- */
+.comp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+}
+@media (min-width: 640px) { .comp-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1024px) { .comp-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+.comp {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  border: 1px dashed var(--border-dashed);
+  border-radius: .75rem;
+  background: var(--surface);
+  padding: .75rem .875rem;
+  transition: transform .2s, box-shadow .2s;
+}
+.comp:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.comp-ico {
+  width: 2rem; height: 2rem;
+  flex-shrink: 0;
+  border-radius: .5rem;
+  background: var(--surface-2);
+  display: grid; place-items: center;
+  font-size: .95rem;
+}
+.comp-txt { font-size: .8125rem; font-weight: 500; color: var(--text); line-height: 1.3; }
+
+/* ---------- Competency cards (home, with scenario copy) ---------- */
+.cap-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .875rem;
+}
+@media (min-width: 700px) { .cap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.cap {
+  position: relative;
+  overflow: hidden;
+  border: 1px dashed var(--border-dashed);
+  border-radius: .875rem;
+  background: var(--surface);
+  padding: 1.1rem 1.15rem 1.15rem;
+  transition: transform .3s cubic-bezier(.2,.7,.3,1), box-shadow .3s, border-color .3s;
+}
+.cap::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cap-a, #1d9bf0), var(--cap-b, #7c5cff));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s cubic-bezier(.2,.7,.3,1);
+}
+.cap:hover, .cap:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-style: solid;
+  border-color: var(--border);
+}
+.cap:hover::before, .cap:focus-within::before { transform: scaleX(1); }
+
+.cap-num {
+  position: absolute;
+  top: .8rem;
+  right: 1rem;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--text-faint);
+  opacity: .55;
+  font-variant-numeric: tabular-nums;
+}
+
+.cap-head {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  margin-bottom: .6rem;
+  padding-right: 2rem;
+}
+.cap-ico {
+  width: 2.1rem; height: 2.1rem;
+  flex-shrink: 0;
+  border-radius: .6rem;
+  display: grid; place-items: center;
+  font-size: 1rem;
+  background: linear-gradient(140deg,
+    color-mix(in srgb, var(--cap-a, #1d9bf0) 16%, transparent),
+    color-mix(in srgb, var(--cap-b, #7c5cff) 16%, transparent));
+  border: 1px solid color-mix(in srgb, var(--cap-a, #1d9bf0) 22%, transparent);
+  transition: transform .3s cubic-bezier(.2,.7,.3,1);
+}
+.cap:hover .cap-ico { transform: rotate(-6deg) scale(1.08); }
+
+.cap-title {
+  font-size: .9375rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--text);
+  line-height: 1.25;
+}
+.cap-body {
+  font-size: .8125rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+.cap-body strong { font-weight: 600; color: var(--text-mid); }
+html.dark .cap-body strong { color: var(--gray-200); }
+
+/* ---------- Clickable widgets (stretched-link pattern) ---------- */
+.card, .featured { position: relative; }
+
+.card .card-link::after,
+.featured .stretch::after,
+.exp-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* keep genuinely interactive children above the stretched hit area */
+.card a:not(.card-link),
+.featured a:not(.stretch) { position: relative; z-index: 2; }
+
+/* whole-widget affordances, only where the widget actually links somewhere */
+.card:has(.card-link) { cursor: pointer; }
+.card:hover .card-link { color: var(--text); }
+.card:hover .card-link svg { transform: translate(2px, -2px); }
+.card:focus-within {
+  outline: none;
+  border-style: solid;
+  border-color: var(--text-faint);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.featured:has(.stretch) { cursor: pointer; }
+.featured { transition: box-shadow .25s, border-color .25s; }
+.featured:hover { box-shadow: var(--shadow-md); border-color: var(--border); }
+.featured:hover .stretch { transform: scale(1.03); }
+.featured:hover .stretch svg { transform: translateX(4px); }
+.featured:focus-within { border-style: solid; border-color: var(--text-faint); }
+
+/* experience rows as whole-row links */
+.exp-link {
+  position: relative;
+  display: block;
+  border-radius: .625rem;
+  margin-inline: -.75rem;
+  padding: .55rem .75rem;
+  transition: background-color .2s, transform .2s;
+}
+@media (min-width: 640px) {
+  .exp-link { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; }
+}
+.exp-link:hover { background: var(--surface-2); }
+.exp-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.exp-link .exp-role { transition: color .2s; }
+.exp-link .exp-arrow {
+  position: absolute;
+  top: .8rem;
+  right: .75rem;
+  width: .9rem; height: .9rem;
+  color: var(--text-faint);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .2s, transform .2s;
+}
+.exp-link:hover .exp-arrow,
+.exp-link:focus-visible .exp-arrow { opacity: 1; transform: translateX(0); }
+
+/* ---------- Floating glass dock ---------- */
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: 1.15rem;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  padding: .3rem;
+  border-radius: 9999px;
+  background: var(--dock-bg);
+  border: 1px solid var(--dock-border);
+  box-shadow: var(--dock-shadow);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  animation: dock-in .5s cubic-bezier(.2,.7,.3,1) both;
+}
+@keyframes dock-in {
+  from { opacity: 0; transform: translate(-50%, 14px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .dock { animation: none; } }
+
+.dock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  border-radius: 9999px;
+  padding: .5rem .95rem;
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  transition: background-color .2s, color .2s;
+}
+.dock-btn:hover { background: var(--dock-hover); }
+.dock-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.dock-btn .dock-glyph { width: 1rem; height: 1rem; flex-shrink: 0; }
+.dock-btn .dock-arrow {
+  width: .8rem; height: .8rem;
+  flex-shrink: 0;
+  color: var(--text-faint);
+  transition: transform .2s, color .2s;
+}
+.dock-btn:hover .dock-arrow { transform: translate(2px, -2px); color: var(--text); }
+.dock-btn.li:hover .dock-glyph { color: #0a66c2; }
+.dock-btn.em:hover .dock-glyph { color: #ea4335; }
+
+.dock-sep {
+  width: 1px;
+  height: 1.35rem;
+  background: var(--dock-border);
+  flex-shrink: 0;
+}
+
+/* ---------- Contact cards ---------- */
+.contact-cards {
+  display: grid;
+  gap: .75rem;
+}
+@media (min-width: 640px) { .contact-cards { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1024px) { .contact-cards { grid-template-columns: 1fr; } }
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--text-faint);
+  box-shadow: var(--shadow-md);
+}
+.contact-left { display: flex; min-width: 0; align-items: center; gap: .75rem; }
+.contact-ico {
+  display: flex;
+  height: 2.5rem; width: 2.5rem;
+  flex-shrink: 0;
+  align-items: center; justify-content: center;
+  border-radius: .75rem;
+  background: var(--surface-2);
+  color: var(--text);
+  transition: background-color .2s;
+}
+.contact-card:hover .contact-ico { background: var(--border); }
+.contact-ico svg { width: 1rem; height: 1rem; }
+.contact-k {
+  display: block;
+  font-size: .625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--text-faint);
+}
+.contact-v {
+  font-size: .875rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contact-chev { width: 1rem; height: 1rem; flex-shrink: 0; color: var(--border-dashed); transition: transform .2s, color .2s; }
+.contact-card:hover .contact-chev { transform: translateX(3px); color: var(--text-muted); }
+
+/* ---------- Credentials ---------- */
+.cred-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.cred-row { display: block; }
+@media (min-width: 640px) {
+  .cred-row { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; }
+}
+.cred-title { font-size: 1rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+.cred-sub { margin-top: .25rem; font-size: .875rem; color: var(--text-muted); }
+.cred-note { margin-top: .25rem; font-size: .75rem; color: var(--text-faint); }
+
+.lang-list { display: flex; flex-wrap: wrap; gap: .625rem; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border-soft);
+  /* extra bottom room so the floating dock never covers the footer text */
+  padding: 2rem 0 6.5rem;
+  margin-top: 1rem;
+}
+.footer-inner {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (min-width: 640px) { .footer-inner { padding-inline: 1.5rem; } }
+.footer-note { font-size: .75rem; line-height: 1.6; color: var(--text-faint); max-width: 34rem; }
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Page header (sub pages) ---------- */
+.page-head { padding: 2rem 0 0; }
+@media (min-width: 640px) { .page-head { padding: 3rem 0 0; } }
+.page-title {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -.03em;
+  color: var(--text);
+  margin-top: .75rem;
+}
+@media (min-width: 640px) { .page-title { font-size: 2.5rem; } }
+.page-lede { margin-top: 1rem; font-size: 1rem; font-weight: 300; line-height: 1.7; color: var(--text-muted); max-width: 38rem; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .875rem;
+  color: var(--text-faint);
+  transition: color .2s;
+}
+.back-link:hover { color: var(--text); }
+.back-link svg { width: .875rem; height: .875rem; transition: transform .2s; }
+.back-link:hover svg { transform: translateX(-3px); }
+
+.rule { height: 1px; background: var(--border-soft); border: 0; margin: 0; }
+
+
+/* ============ PROFILE PHOTO ============ */
+.avatar { box-shadow: 0 0 0 1px rgba(127,29,29,.14), 0 14px 34px -16px rgba(15,23,42,.5); }
+html.dark .avatar { box-shadow: 0 0 0 1px rgba(244,63,94,.2), 0 14px 34px -16px rgba(0,0,0,.85); }
+.avatar-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 50%;
+  filter: saturate(1.06) contrast(1.04);
+  transition: transform .6s cubic-bezier(.2,.7,.3,1);
+}
+.avatar:hover .avatar-photo, .avatar:focus-visible .avatar-photo { transform: scale(1.06); }
+.avatar-alt {
+  position: absolute; inset: auto 0 0 0; height: 48%;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  gap: .05rem; padding: .4rem .35rem .62rem;
+  background: linear-gradient(to top, rgba(74,8,27,.95) 0%, rgba(74,8,27,.74) 46%, rgba(74,8,27,0) 100%);
+}
+.avatar-alt span:first-child { font-size: 1.05rem; line-height: 1; }
+.avatar-alt span:last-child { font-size: .4375rem; letter-spacing: .16em; }
+@media (min-width: 640px) {
+  .avatar-alt span:first-child { font-size: 1.25rem; }
+  .avatar-alt span:last-child { font-size: .5rem; }
+}
+
+/* ============ PROOF OF WORK ============ */
+.exp-item { display: block; }
+.exp-item .proof-strip { margin-top: .95rem; }
+@media (min-width: 640px) {
+  .exp-item .proof-strip { margin-left: calc(160px + 1.5rem); }
+}
+.card-body .proof-strip { margin: .85rem 0 .25rem; }
+.proof-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(142px, 1fr)); gap: .7rem; }
+@media (min-width: 640px) { .proof-strip { grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); } }
+.shot {
+  display: flex; flex-direction: column; height: 100%;
+  width: 100%; padding: 0; margin: 0; text-align: left; font: inherit; color: inherit;
+  border: 1px solid var(--border); border-radius: .7rem; overflow: hidden;
+  background: var(--surface); cursor: zoom-in;
+  transition: transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s ease, border-color .25s ease;
+}
+.shot:hover, .shot:focus-visible {
+  transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--text-faint); outline: none;
+}
+.shot-img {
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top center;
+  background: var(--surface-2);
+}
+.shot-cap {
+  display: flex; align-items: center; flex: 1 1 auto;
+  padding: .5rem .58rem .6rem; font-size: .6875rem; line-height: 1.4;
+  color: var(--text-muted); border-top: 1px solid var(--border-soft);
+}
+.shot-img { flex: 0 0 auto; }
+
+/* ============ LIGHTBOX ============ */
+.lbx {
+  position: fixed; inset: 0; z-index: 140; display: none;
+  place-items: center; padding: 1.25rem;
+  background: rgba(8,8,10,.93); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.lbx.on { display: grid; }
+.lbx-fig { display: flex; flex-direction: column; align-items: center; gap: .8rem; max-width: min(1100px, 92vw); }
+.lbx-img {
+  max-width: 100%; max-height: 74vh; object-fit: contain;
+  border-radius: .5rem; background: #fff; box-shadow: 0 24px 70px -20px rgba(0,0,0,.85);
+}
+.lbx-cap { max-width: 44rem; text-align: center; font-size: .8125rem; line-height: 1.55; color: rgba(255,255,255,.84); }
+.lbx-count { font-size: .625rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.42); }
+.lbx-btn {
+  position: absolute; width: 2.75rem; height: 2.75rem; border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); color: #fff;
+  display: grid; place-items: center; cursor: pointer; transition: background .2s ease;
+}
+.lbx-btn:hover { background: rgba(255,255,255,.2); }
+.lbx-btn svg { width: 1.15rem; height: 1.15rem; }
+.lbx-prev { left: 1.1rem; top: 50%; transform: translateY(-50%); }
+.lbx-next { right: 1.1rem; top: 50%; transform: translateY(-50%); }
+.lbx-close { top: 1.1rem; right: 1.1rem; }
+@media (max-width: 640px) {
+  .lbx-btn { width: 2.35rem; height: 2.35rem; }
+  .lbx-prev { left: .35rem; } .lbx-next { right: .35rem; }
+  .lbx-img { max-height: 66vh; }
+}
+
+/* ============ TRANSLATION PANEL ============ */
+.trans-src { display: none; }
+.lbx-trans {
+  max-width: 44rem; width: 100%;
+  border: 1px solid rgba(255,255,255,.2); border-radius: .6rem;
+  background: rgba(255,255,255,.07); padding: .85rem 1rem;
+  text-align: left;
+}
+.lbx-trans .trans-tag {
+  font-size: .5625rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); line-height: 1.5; margin-bottom: .6rem;
+}
+.lbx-trans .trans-dl { display: grid; grid-template-columns: auto 1fr; gap: .3rem .9rem; margin: 0; }
+.lbx-trans dt {
+  font-size: .5625rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
+  color: rgba(255,255,255,.45); padding-top: .18rem; white-space: nowrap;
+}
+.lbx-trans dd { margin: 0; font-size: .8125rem; line-height: 1.5; color: rgba(255,255,255,.92); }
+@media (max-width: 640px) {
+  .lbx-trans .trans-dl { grid-template-columns: 1fr; gap: .1rem; }
+  .lbx-trans dt { padding-top: .45rem; }
+  .lbx-img { max-height: 52vh; }
+}
+.lbx-fig { max-height: 92vh; overflow-y: auto; }
+
+/* ============ EXTERNAL LINKS ============ */
+.ext-links { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .85rem; }
+@media (min-width: 640px) {
+  .exp-item .ext-links { margin-left: calc(160px + 1.5rem); }
+}
+.card-body .ext-links { margin: .8rem 0 .2rem; }
+.ext-link {
+  display: inline-flex; align-items: center; gap: .42rem;
+  padding: .34rem .66rem; border: 1px solid var(--border); border-radius: 9999px;
+  background: var(--surface); font-size: .6875rem; font-weight: 600;
+  color: var(--text-mid); text-decoration: none; white-space: nowrap;
+  transition: border-color .2s ease, color .2s ease, transform .2s cubic-bezier(.2,.7,.3,1);
+}
+.ext-link:hover, .ext-link:focus-visible {
+  border-color: var(--text-faint); color: var(--text); transform: translateY(-1px);
+}
+.ext-link svg { flex-shrink: 0; }
+.ext-link .ig { width: .85rem; height: .85rem; color: #E1306C; }
+.ext-link .arr { width: .66rem; height: .66rem; opacity: .45; }
+</style>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' font-size='24'>🤝</text></svg>">
+<script>
+  /* set the theme before first paint so there is no flash */
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var dark = stored ? stored === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.classList.add("dark");
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="index.html">WW</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="experience.html">Experience</a>
+        <a href="freelance.html">Freelance</a>
+        <a href="tools.html">Tools</a>
+        <a href="credentials.html">Credentials</a>
+      </div>
+      <div class="nav-divider"></div>
+      <button type="button" class="theme-toggle" title="Switch to dark" aria-label="Switch to dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"></circle>
+          <path d="M12 2.5v2.2M12 19.3v2.2M4.9 4.9l1.55 1.55M17.55 17.55l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.9 19.1l1.55-1.55M17.55 6.45l1.55-1.55"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.5 14.6c-1 .4-2.1.6-3.2.6-5 0-9-4-9-9 0-1.6.4-3.1 1.2-4.4a.75.75 0 0 0-.9-1.1A10.5 10.5 0 1 0 21.6 15.5a.75.75 0 0 0-1.1-.9Z"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-id">
+        <div class="avatar" tabindex="0" aria-label="Wulan Winata">
+          <div class="avatar-mono">WW</div>
+          <img class="avatar-photo" src="assets/profile-v2.jpg" alt="Portrait of Wulan Winata" width="768" height="768" onerror="this.style.display='none'">
+          <div class="avatar-alt" aria-hidden="true">
+            <span>🤝</span>
+            <span>Let's connect</span>
+          </div>
+        </div>
+        <div>
+          <h1 class="hero-name">
+            Wulan Winata
+            <span class="hero-alias">(Lana)</span>
+            <svg class="verified" viewBox="0 0 22 22" title="Verified" aria-label="Verified">
+              <path fill="#1D9BF0" d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.053-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.607-.274 1.264-.144 1.898.13.634.435 1.219.88 1.688.47.443 1.054.749 1.688.879.633.13 1.29.083 1.897-.14.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.607.224 1.264.272 1.897.14.634-.13 1.217-.436 1.687-.878.445-.47.75-1.055.88-1.688.13-.634.083-1.291-.14-1.897.586-.274 1.084-.705 1.438-1.246.354-.541.551-1.17.57-1.817Zm-11.343 3.9-3.5-3.5 1.238-1.238 2.262 2.262 5.315-5.315L15.5 8.35l-6.5 6.55Z"></path>
+            </svg>
+          </h1>
+          <div class="social-row">
+            <a class="s-linkedin" href="https://linkedin.com/in/wulanzein" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05a3.75 3.75 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+            </a>
+            <a class="s-mail" href="mailto:Wlnwinata.work@gmail.com" title="Email" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </a>
+            <a class="s-wa" href="https://wa.me/6282213758285" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.96L2 22.5l5.68-1.49A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.13 15.07l-.3-.18-3.37.88.9-3.28-.2-.32A8.1 8.1 0 0 1 12.04 3.8Zm4.65 10.2c-.25-.13-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.19-.54.06a6.66 6.66 0 0 1-3.32-2.9c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.42-.06-.13-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.22.25-.84.83-.84 2.01s.86 2.33.98 2.5c.13.16 1.7 2.6 4.12 3.64 1.53.66 2.13.72 2.9.6.46-.06 1.48-.6 1.69-1.19.2-.58.2-1.08.15-1.19-.06-.11-.23-.18-.48-.3Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <h2 class="hero-title">
+          Strategic Partnerships Manager<br>
+          <span>Community &amp; Growth</span>
+        </h2>
+        <p class="hero-lede">
+          Partnerships builder and community architect with 8+ years of putting people together, from a bank's front
+          line to global tech communities, across
+          <span class="chip-inline"><span class="tech-dot" style="background:#0b7285"></span>Banking</span><span class="chip-inline"><span class="tech-dot" style="background:#7c5cff"></span>Web3</span><span class="chip-inline"><span class="tech-dot" style="background:#f7931a"></span>Crypto</span>
+          and influencer marketing. I build partner networks and communities from zero, negotiate and close the deals that
+          hold them together, and read people and situations as a natural observer.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="https://linkedin.com/in/wulanzein" target="_blank" rel="noopener noreferrer">
+            <span>Connect on LinkedIn</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <a class="btn-ghost" href="mailto:Wlnwinata.work@gmail.com">
+            <span>Get in touch</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="section reveal">
+    <div class="stats">
+      <div class="stat">
+        <p class="stat-num">300+</p>
+        <p class="stat-label">Partnerships<br>Closed</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">1,000+</p>
+        <p class="stat-label">Creators<br>Onboarded</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">10K+</p>
+        <p class="stat-label">Qualified<br>Leads</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">4.5M+</p>
+        <p class="stat-label">Community<br>Reach</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">&euro;10K</p>
+        <p class="stat-label">Monthly Sales<br>Closed</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">5,000+</p>
+        <p class="stat-label">Community<br>Built From Zero</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">200+</p>
+        <p class="stat-label">Customers<br>Served Daily</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">8+</p>
+        <p class="stat-label">Years<br>Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED ============ -->
+  <section class="featured reveal">
+    <div class="featured-grid">
+      <div class="featured-visual">
+        <div class="featured-visual-inner">
+          <p class="featured-visual-num">4.5M+</p>
+          <p class="featured-visual-cap">Global tech community</p>
+        </div>
+      </div>
+      <div class="featured-body">
+        <div>
+          <p class="eyebrow">Featured Role</p>
+          <h2 class="featured-title">WomenTech Network: growth at global scale.</h2>
+          <p class="featured-desc">
+            Membership growth, retention and community management for 4.5M+ professionals across 179 countries, supporting 9,000+ Global Ambassadors and 70,000+ tech leaders. Ambassador for WomenTech Indonesia.
+          </p>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Community Growth</span>
+          <span class="pill">Partnerships</span>
+          <span class="pill">AI Automation</span>
+          <span class="pill">Event Ops</span>
+          <span class="pill">Ambassador</span>
+        </div>
+        <a class="btn stretch" href="experience.html#womentech">
+          <span>Read the detail</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="section-title">About Wulan</p>
+      <span class="eyebrow">My Story</span>
+    </div>
+    <div class="split center">
+      <div>
+        <p class="prose">
+          I began my career as a banker for 4.5 years at Bank Capital Indonesia, a foundation that shaped me into a
+          deeply people-oriented professional with high analytical thinking and sharp problem-solving instincts.
+        </p>
+        <p class="prose">
+          Then came the pivot. I moved into the digital, creative and crypto industry, not just as a trader but as a
+          builder. I found my passion at the intersection of art, blockchain and human connection. What sets me apart as
+          a creative is an instinctive aesthetic sensibility, a natural eye for beauty, detail and design that shapes
+          everything I touch, from brand storytelling to visual strategy.
+        </p>
+        <p class="prose">
+          As an ENFJ, networking is genuinely one of my mood-boosters. I'm equally creative in planning and organised in execution, intuitive yet adaptable, bringing both vision and structure to everything I do. And when something breaks, I'm usually the person people bring it to.
+        </p>
+        <div class="pill-row" style="margin-top:1.25rem">
+          <span class="pill-lg">People Person</span>
+          <span class="pill-lg">Analytical Thinker</span>
+          <span class="pill-lg">Creative Planner</span>
+          <span class="pill-lg">Natural Networker</span>
+          <span class="pill-lg">Creative Negotiator</span>
+          <span class="pill-lg">Problem Solver</span>
+          <span class="pill-lg">Intuitive Leader</span>
+          <span class="pill-lg">Organized Executor</span>
+          <span class="pill-lg">Lifelong Learner</span>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <p class="fact-k">Career Foundation</p>
+          <p class="fact-v">4.5 Years Banking &amp; Finance</p>
+        </div>
+        <div class="fact">
+          <p class="fact-k">Core Values</p>
+          <p class="fact-v">Community · Art · Meaningful Impact · Partnership · Negotiator</p>
+        </div>
+        <div class="fact">
+          <p class="fact-k">MBTI Personality</p>
+          <p class="fact-v">ENFJ, The Protagonist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="section-title">Experience</p>
+      <a class="link-more" href="experience.html">
+        <span>View Details</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item">
+      <a class="exp-row exp-link" href="experience.html#womentech">
+        <p class="exp-date">Jul 2025 - Mar 2026</p>
+        <div>
+          <div class="exp-head">
+            <span class="logo" data-mono="WT" style="--logo-a:#6d28d9;--logo-b:#06b6d4" aria-hidden="true"><img src="assets/logos/womentech.png" alt="WomenTech Network logo" data-fit="cover" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <h3 class="exp-role">Membership Growth, Retention &amp; Community Manager</h3>
+              <p class="exp-org">WomenTech Network</p>
+              <p class="exp-place">USA / Global (Remote)</p>
+            </div>
+          </div>
+          <div class="exp-metrics">
+          <span class="exp-metric"><span class="exp-metric-num">4.5M+</span><span class="exp-metric-lab">Members</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">179</span><span class="exp-metric-lab">Countries</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">9,000+</span><span class="exp-metric-lab">Ambassadors</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">70,000+</span><span class="exp-metric-lab">Tech leaders</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">Ambassador</span><span class="exp-metric-lab">WomenTech Indonesia</span></span>
+          </div>
+          <ul class="exp-points">
+          <li>Grew and retained a global tech community of <strong>4.5M+ professionals across 179 countries</strong> through targeted campaigns, curated content and virtual networking events.</li>
+          <li>Managed strategic partnership relationships across key markets, supporting <strong>9,000+ Global Ambassadors</strong> and <strong>70,000+ tech leaders</strong>.</li>
+          <li>Serve as <strong>Ambassador for WomenTech Indonesia</strong>, running the local chapter's page and its Women in Tech Indonesia webinar series.</li>
+          <li>Moderated C-suite webinars with the CEO of Xendit, the CEO of HP Indonesia and the CCO of Magicblocks.ai Australia.</li>
+          <li>Sourced female founders and tech leaders as event speakers, and tracked retention, satisfaction and engagement KPIs.</li>
+          </ul>
+        </div>
+        <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+        <div class="proof-strip">
+          <button type="button" class="shot" data-full="assets/work/wt-webinar.jpg" data-cap="Women in Tech Indonesia local webinar series: &ldquo;Unlocking Leadership Potential&rdquo;, with the Managing Director of HP, the Co-Founder &amp; COO of Xendit and the Chief Community Officer of MagicBlocks.ai.">
+          <img class="shot-img" src="assets/work/thumbs/wt-webinar.jpg" alt="Women in Tech Indonesia webinar series" loading="lazy">
+          <span class="shot-cap">Women in Tech Indonesia webinar series</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/wt-session.jpg" data-cap="Hosting a live Women in Tech Indonesia session on the International Day of Persons with Disabilities.">
+          <img class="shot-img" src="assets/work/thumbs/wt-session.jpg" alt="Hosting a live session" loading="lazy">
+          <span class="shot-cap">Hosting a live session</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/wt-linkedin.jpg" data-cap="The Women in Tech Indonesia page I run as Ambassador, posting and scheduling for the local chapter.">
+          <img class="shot-img" src="assets/work/thumbs/wt-linkedin.jpg" alt="Women in Tech Indonesia page" loading="lazy">
+          <span class="shot-cap">Women in Tech Indonesia page</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/wt-recruiters.jpg" data-cap="Working session on specialised tech recruiters and agencies: company size, goals and pain points for sourcing pipelines.">
+          <img class="shot-img" src="assets/work/thumbs/wt-recruiters.jpg" alt="Tech recruiter working session" loading="lazy">
+          <span class="shot-cap">Tech recruiter working session</span>
+          </button>
+        </div>
+      </div>
+      <div class="exp-item">
+      <a class="exp-row exp-link" href="experience.html#dankcity">
+        <p class="exp-date">Jan 2024 - Oct 2024</p>
+        <div>
+          <div class="exp-head">
+            <span class="logo" data-mono="DC" style="--logo-a:#052e16;--logo-b:#16a34a" aria-hidden="true"><img src="assets/logos/dankcity.png" alt="DankCity and DimeLabs logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <h3 class="exp-role">Digital Marketing Specialist</h3>
+              <p class="exp-org">DankCity &amp; DimeLabs</p>
+              <p class="exp-place">USA (Remote)</p>
+            </div>
+          </div>
+          <div class="exp-metrics">
+          <span class="exp-metric"><span class="exp-metric-num">10,000+</span><span class="exp-metric-lab">Qualified leads</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">4</span><span class="exp-metric-lab">Channels</span></span>
+          </div>
+          <ul class="exp-points">
+          <li>Generated <strong>10,000+ qualified leads</strong> through targeted digital campaigns, e-commerce funnels and CRM-driven outreach.</li>
+          <li>Ran multi-channel campaigns across social, email and content platforms, optimising performance through A/B testing and data analysis.</li>
+          <li>Worked across DimeLabs' network of crypto, NFT and blockchain creators on X, YouTube, TikTok and Instagram.</li>
+          </ul>
+        </div>
+        <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+        <div class="proof-strip">
+          <button type="button" class="shot" data-full="assets/work/dc-summer.jpg" data-cap="DankCity summer dispensary package: everything in for $500, including an email blast to 250K+ subscribers, influencer stories and a featured article.">
+            <img class="shot-img" src="assets/work/thumbs/dc-summer.jpg" alt="Summer dispensary package" loading="lazy">
+            <span class="shot-cap">Summer dispensary package</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/dc-420.jpg" data-cap="The 420 campaign sheet for 20 April 2024, with the audience data behind the pitch: 100K+ monthly site visits, 1.1M+ followers and a 92% US audience.">
+            <img class="shot-img" src="assets/work/thumbs/dc-420.jpg" alt="420 campaign sheet" loading="lazy">
+            <span class="shot-cap">420 campaign sheet</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/dc-420-ohio.jpg" data-cap="The Ohio version of the same 420 sheet, localised down to the top cities and the 27% Ohio share of the audience.">
+            <img class="shot-img" src="assets/work/thumbs/dc-420-ohio.jpg" alt="Ohio 420 sheet" loading="lazy">
+            <span class="shot-cap">Ohio 420 sheet</span>
+          </button>
+        </div>
+      </div>
+      <div class="exp-item">
+      <a class="exp-row exp-link" href="experience.html#doe">
+        <p class="exp-date">Jun 2022 - Jan 2024</p>
+        <div>
+          <div class="exp-head">
+            <span class="logo" data-mono="DOE" style="--logo-a:#431407;--logo-b:#ea580c" aria-hidden="true"><img src="assets/logos/doe.png" alt="Digital Online Empire logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <h3 class="exp-role">Business Development &amp; Strategic Partnerships Manager</h3>
+              <p class="exp-org">Digital Online Empire</p>
+              <p class="exp-place">Bali, Indonesia</p>
+            </div>
+          </div>
+          <div class="exp-metrics">
+          <span class="exp-metric"><span class="exp-metric-num">300+</span><span class="exp-metric-lab">Partnerships closed</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">Team of 5</span><span class="exp-metric-lab">Hired &amp; led</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">Zero</span><span class="exp-metric-lab">Starting network</span></span>
+          </div>
+          <ul class="exp-points">
+          <li>Sourced, negotiated and closed <strong>300+ strategic partnerships</strong> across the Bali Beach Boyz NFT project and the Bali Card tourism membership programme.</li>
+          <li>Built the partner network <strong>from zero</strong>, mapping verified venues and businesses island-wide from Buleleng to Nusa Penida.</li>
+          <li>Built and led a <strong>team of five</strong> from scratch for the Bali Card programme: hired them, set the creative direction, coordinated and executed the campaigns, and supervised the work day to day.</li>
+          <li>Recruited and managed crypto influencers and micro-shillers on X, briefing each campaign and tracking what came back.</li>
+          <li>Designed Discord bot automation to run community operations and member onboarding at scale.</li>
+          </ul>
+        </div>
+        <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+        <div class="proof-strip">
+          <button type="button" class="shot" data-full="assets/work/doe-balicard-flyer.jpg" data-cap="The Official BaliCard, the tourism membership card behind the partner network: over 200 local partners signed for member deals.">
+          <img class="shot-img" src="assets/work/thumbs/doe-balicard-flyer.jpg" alt="The Official BaliCard" loading="lazy">
+          <span class="shot-cap">The Official BaliCard</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/doe-balicard-site.jpg" data-cap="The BaliCard site funnel, with the two routes I recruited into: brand ambassador and partner.">
+          <img class="shot-img" src="assets/work/thumbs/doe-balicard-site.jpg" alt="Ambassador and partner funnel" loading="lazy">
+          <span class="shot-cap">Ambassador &amp; partner funnel</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/doe-bbb-nft.jpg" data-cap="Bali Beach Boyz, the 3D NFT collection attached to the membership, with social and environmental projects in the local economy.">
+          <img class="shot-img" src="assets/work/thumbs/doe-bbb-nft.jpg" alt="Bali Beach Boyz NFT" loading="lazy">
+          <span class="shot-cap">Bali Beach Boyz NFT</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/doe-bbb-opensea.jpg" data-cap="BaliBeachBoyz on OpenSea: 5.6K items, 2.0K SOL total volume and 25% unique owners.">
+          <img class="shot-img" src="assets/work/thumbs/doe-bbb-opensea.jpg" alt="5.6K items on OpenSea" loading="lazy">
+          <span class="shot-cap">5.6K items on OpenSea</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/doe-bbb-deals.jpg" data-cap="Partner deals artwork for NFT holders, the offer I used to open conversations with local businesses.">
+          <img class="shot-img" src="assets/work/thumbs/doe-bbb-deals.jpg" alt="Partner deals for holders" loading="lazy">
+          <span class="shot-cap">Partner deals for holders</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/doe-bbb-partners.jpg" data-cap="The partner pitch: what a brand gets from the network, used across island-wide outreach from Buleleng to Nusa Penida.">
+          <img class="shot-img" src="assets/work/thumbs/doe-bbb-partners.jpg" alt="The partner pitch" loading="lazy">
+          <span class="shot-cap">The partner pitch</span>
+          </button>
+        </div>
+        <div class="ext-links">
+          <a class="ext-link" href="https://www.instagram.com/reel/CztIGzUSc8D/" target="_blank" rel="noopener noreferrer" aria-label="Campaign reel on Instagram">
+            <svg class="ig" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.98c-3.15 0-3.5.01-4.74.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.4.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.39-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32-1.24-.06-1.59-.07-4.74-.07Zm0 3.37a4.49 4.49 0 1 1 0 8.98 4.49 4.49 0 0 1 0-8.98Zm0 7.4a2.91 2.91 0 1 0 0-5.82 2.91 2.91 0 0 0 0 5.82Zm5.72-7.6a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"/></svg><span>Campaign reel</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <a class="ext-link" href="https://www.instagram.com/balibeachboyz/" target="_blank" rel="noopener noreferrer" aria-label="Bali Beach Boyz on Instagram">
+            <svg class="ig" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.98c-3.15 0-3.5.01-4.74.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.4.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.39-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32-1.24-.06-1.59-.07-4.74-.07Zm0 3.37a4.49 4.49 0 1 1 0 8.98 4.49 4.49 0 0 1 0-8.98Zm0 7.4a2.91 2.91 0 1 0 0-5.82 2.91 2.91 0 0 0 0 5.82Zm5.72-7.6a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"/></svg><span>@balibeachboyz</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="exp-item">
+      <a class="exp-row exp-link" href="experience.html#fleamint">
+        <p class="exp-date">Sep 2022 - Mar 2023</p>
+        <div>
+          <div class="exp-head">
+            <span class="logo" data-mono="FM" style="--logo-a:#0c4a6e;--logo-b:#06b6d4" aria-hidden="true"><img src="assets/logos/fleamint.png" alt="Fleamint NFT Marketplace logo" data-fit="cover" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <h3 class="exp-role">Assistant Marketing Manager &amp; Community Manager, Founding Team</h3>
+              <p class="exp-org">Fleamint NFT Marketplace</p>
+              <p class="exp-place">Singapore (Remote)</p>
+            </div>
+          </div>
+          <div class="exp-metrics">
+          <span class="exp-metric"><span class="exp-metric-num">0 &rarr; 5,000+</span><span class="exp-metric-lab">Members</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">+30%</span><span class="exp-metric-lab">Engagement</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">+25%</span><span class="exp-metric-lab">Organic reach</span></span>
+          </div>
+          <ul class="exp-points">
+          <li>Founding team member: built the entire community infrastructure from scratch and grew it <strong>from zero to 5,000+ members</strong> across Discord, Meta, YouTube and virtual events.</li>
+          <li>Lifted engagement <strong>30%</strong>, organic reach <strong>25%</strong> and platform reach <strong>15%</strong> through targeted activation strategies.</li>
+          <li>Led PR directly with global crypto journalists, securing editorial coverage across international blockchain publications.</li>
+          <li>Hosted and moderated community Twitter Spaces, including Fleamint: A Rebuttal featuring James Gillingham.</li>
+          </ul>
+        </div>
+        <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+        <div class="proof-strip">
+          <button type="button" class="shot" data-full="assets/work/fm-roadmap.jpg" data-cap="The Fleamint roadmap I worked against: DAO creation, token generation event, 5,000 users, 50 onboarded brands and the 2,000 NFT mint.">
+          <img class="shot-img" src="assets/work/thumbs/fm-roadmap.jpg" alt="Product roadmap" loading="lazy">
+          <span class="shot-cap">Product roadmap</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/fm-desktop.jpg" data-cap="The Fleamint beta marketplace, connecting real and virtual assets for brands and consumers.">
+          <img class="shot-img" src="assets/work/thumbs/fm-desktop.jpg" alt="The beta marketplace" loading="lazy">
+          <span class="shot-cap">The beta marketplace</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/fm-mobile.jpg" data-cap="Fleamint on mobile, where most of the community arrived from.">
+          <img class="shot-img" src="assets/work/thumbs/fm-mobile.jpg" alt="Fleamint on mobile" loading="lazy">
+          <span class="shot-cap">Fleamint on mobile</span>
+          </button>
+        </div>
+      </div>
+      <div class="exp-item">
+      <a class="exp-row exp-link" href="experience.html#rio">
+        <p class="exp-date">Feb 2022 - May 2022</p>
+        <div>
+          <div class="exp-head">
+            <span class="logo" data-mono="RD" style="--logo-a:#3b0764;--logo-b:#a21caf" aria-hidden="true"><img src="assets/logos/riodefi.png" alt="Rio Marketing (Rio-De-Fi) logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <h3 class="exp-role">Community Manager</h3>
+              <p class="exp-org">Rio Marketing (Rio-De-Fi)</p>
+              <p class="exp-place">Hong Kong (Remote)</p>
+            </div>
+          </div>
+          <div class="exp-metrics">
+          <span class="exp-metric"><span class="exp-metric-num">2</span><span class="exp-metric-lab">Celebrity KOLs</span></span>
+          </div>
+          <ul class="exp-points">
+          <li>Ran KOL partnerships end to end, from brief to delivery, and opened conversations with artists at that level, including <strong>Lupe Fiasco</strong> and <strong>Jason Derulo</strong>.</li>
+          <li>Built and executed engagement strategies to grow audiences across NFT and Web3 channels, and coordinated community events.</li>
+          </ul>
+        </div>
+        <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+        <div class="proof-strip">
+          <button type="button" class="shot" data-full="assets/work/rd-jasonderulo.jpg" data-cap="Jason Derulo reaching out on Instagram about the Rio-De-Fi project: &ldquo;Let's work and take over&rdquo;. Shown as the message request landed.">
+          <img class="shot-img" src="assets/work/thumbs/rd-jasonderulo.jpg" alt="Instagram message from Jason Derulo" loading="lazy">
+          <span class="shot-cap">Jason Derulo, inbound DM</span>
+        </button>
+        <button type="button" class="shot" data-full="assets/work/rd-goingape-launch.jpg" data-cap="GoingApe NFT, a Rio-De-Fi project, during a launch campaign.">
+          <img class="shot-img" src="assets/work/thumbs/rd-goingape-launch.jpg" alt="GoingApe launch campaign" loading="lazy">
+          <span class="shot-cap">GoingApe launch campaign</span>
+          </button>
+          <button type="button" class="shot" data-full="assets/work/rd-goingape-ig.jpg" data-cap="GoingApe NFT on Instagram at 9,775 followers, the audience behind the Rio-De-Fi KOL and community work.">
+          <img class="shot-img" src="assets/work/thumbs/rd-goingape-ig.jpg" alt="GoingApe at 9,775 followers" loading="lazy">
+          <span class="shot-cap">GoingApe at 9,775 followers</span>
+          </button>
+        </div>
+      </div>
+      <div class="exp-item">
+      <a class="exp-row exp-link" href="experience.html#bankcapital">
+        <p class="exp-date">May 2017 - Oct 2021</p>
+        <div>
+          <div class="exp-head">
+            <span class="logo" data-mono="BC" style="--logo-a:#0b2545;--logo-b:#1d4ed8" aria-hidden="true"><img src="assets/logos/bankcapital.png" alt="Bank Capital Indonesia logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <h3 class="exp-role">Customer Service Representative</h3>
+              <p class="exp-org">Bank Capital Indonesia</p>
+              <p class="exp-place">Jakarta, Indonesia</p>
+            </div>
+          </div>
+          <div class="exp-metrics">
+          <span class="exp-metric"><span class="exp-metric-num">200+</span><span class="exp-metric-lab">Customers daily</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">4.5</span><span class="exp-metric-lab">Years front line</span></span>
+          <span class="exp-metric"><span class="exp-metric-num">Best Grade</span><span class="exp-metric-lab">Award</span></span>
+          </div>
+          <ul class="exp-points">
+          <li>Served <strong>200+ customers a day</strong> on the front line at head office, handling enquiries, transactions and issue resolution with a focus on accuracy and satisfaction.</li>
+          <li>Awarded <strong>Best Grade</strong> in the Basic Operational Program, 11th Batch, 2017.</li>
+          <li>Managed high-volume queues to cut waiting times, and mentored incoming staff on operational best practice.</li>
+          <li>Alongside the bank role, active in organisational and journalism work: sourced and invited speakers, built the partnerships behind the events, and wrote and produced the bulletin.</li>
+          <li>Ran fundraising campaigns on <strong>Kitabisa.com</strong>, Indonesia's crowdfunding platform.</li>
+          </ul>
+        </div>
+        <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+        <div class="proof-strip">
+          <button type="button" class="shot" data-full="assets/work/bc-cert-bop.jpg" data-cap="Certificate of Completion, Basic Operational Program, 11th Batch. PT Bank Capital Indonesia, 29 May 2017, signed by the President Director.">
+          <img class="shot-img" src="assets/work/thumbs/bc-cert-bop.jpg" alt="Basic Operational Program" loading="lazy">
+          <span class="shot-cap">Basic Operational Program</span>
+        </button>
+        <button type="button" class="shot" data-full="assets/work/bc-cert-complaints.jpg" data-cap="Certificate of Achievement, Customer Complaint Reporting. Bee3 Consulting, Jakarta, February 2020.">
+          <img class="shot-img" src="assets/work/thumbs/bc-cert-complaints.jpg" alt="Customer Complaint Reporting" loading="lazy">
+          <span class="shot-cap">Customer Complaint Reporting</span>
+          </button>
+          <button type="button" class="shot" data-trans="trans-fraud" data-full="assets/work/bc-cert-fraud.jpg" data-cap="Certificate of Achievement, &ldquo;Kenali &amp; Hindari Fraud bagi Staff &amp; Nasabah Bank&rdquo;. In English: Recognising and Avoiding Fraud for Bank Staff and Customers. Bee3 Consulting, Jakarta, February 2020.">
+          <img class="shot-img" src="assets/work/thumbs/bc-cert-fraud.jpg" alt="Fraud awareness certificate" loading="lazy">
+          <span class="shot-cap">Fraud awareness certificate</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FREELANCE ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="section-title">Freelance &amp; Contract</p>
+      <a class="link-more" href="freelance.html">
+        <span>View All</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+    <p class="prose" style="margin:-.5rem 0 1.5rem">
+      Dated, and continuous. Between them and the roles above, there is no gap in the timeline from
+      May 2017 to today. Several overlap because they ran in parallel.
+    </p>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-thumb g1">
+          <span class="card-thumb-mono">&euro;10,000<br>/ month</span>
+          <span class="card-thumb-label" style="position:absolute;bottom:.75rem;left:0;right:0">High-ticket sales closed</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="DD" style="--logo-a:#0f172a;--logo-b:#2563eb" aria-hidden="true"><img src="assets/logos/daydream.png" alt="Daydream Community logo" data-fit="cover" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <p class="card-date">Jun 2026 - Present</p>
+              <p class="card-title">Daydream Community</p>
+              <p class="card-role">Social Media Strategist &amp; Appointment Setter</p>
+            </div>
+          </div>
+          <p class="card-desc">Instagram strategy and high-ticket appointment setting for Abel Rab&eacute;rin, a certified wealth manager in Geneva. The community is built around professionals and wellness and health practitioners moving their practices online, alongside Abel's financial education programme. Also run the monthly community webinar end to end on Luma, from the event page and invitations through to the live session.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">&euro;10,000</span><span class="exp-metric-lab">Monthly sales closed</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">0 &rarr; live</span><span class="exp-metric-lab">Instagram built</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">Full</span><span class="exp-metric-lab">Shadowban recovery</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">Monthly</span><span class="exp-metric-lab">Webinar on Luma</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="badge-progress">Current</span>
+            <span class="pill">Bitcoin</span>
+            <span class="pill">High-ticket</span>
+            <span class="pill">Wellness</span>
+            <span class="pill">Luma</span>
+          </div>
+          <a class="card-link" href="freelance.html#daydream">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb g6">
+          <span class="card-thumb-mono">600+</span>
+          <span class="card-thumb-label" style="position:absolute;bottom:.75rem;left:0;right:0">Creators onboarded</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="SW" style="--logo-a:#4c0519;--logo-b:#e11d48" aria-hidden="true"><img src="assets/logos/swimwear.png" alt="Swimwear Agency logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <p class="card-date">Mar 2026 - Jun 2026</p>
+              <p class="card-title">Swimwear Agency</p>
+              <p class="card-role">SDR &amp; Creator Acquisition Specialist</p>
+            </div>
+          </div>
+          <p class="card-desc">Outbound creator acquisition and the full onboarding lifecycle for an agency by @SnejanaJens &amp; @Artvor. Approached 1,000+ creators and signed more than half of them in under three months, then negotiated every rate.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">1,000+</span><span class="exp-metric-lab">Creators approached</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">600+</span><span class="exp-metric-lab">Onboarded</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">300+</span><span class="exp-metric-lab">Signed as KOL</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">20%</span><span class="exp-metric-lab">Commission negotiated</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">&lt;3 mo</span><span class="exp-metric-lab">Time to scale</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="pill">UGC</span>
+            <span class="pill">Negotiation</span>
+            <span class="pill">Outbound</span>
+          </div>
+          <div class="proof-strip">
+            <button type="button" class="shot" data-full="assets/work/sw-site.jpg" data-cap="The agency's brand and partnership funnel, the side of the business my creator pipeline fed into.">
+            <img class="shot-img" src="assets/work/thumbs/sw-site.jpg" alt="Brand and partnership funnel" loading="lazy">
+            <span class="shot-cap">Brand &amp; partnership funnel</span>
+            </button>
+          </div>
+          <a class="card-link" href="freelance.html#swimwear">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb g3">
+          <span class="card-thumb-mono">10+</span>
+          <span class="card-thumb-label" style="position:absolute;bottom:.75rem;left:0;right:0">Candidates placed</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="DS" style="--logo-a:#052e16;--logo-b:#16a34a" aria-hidden="true"><img src="assets/logos/dreamsalesjobs.png" alt="Dream Sales Jobs logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <p class="card-date">Dec 2025 - Present</p>
+              <p class="card-title">Dream Sales Jobs</p>
+              <p class="card-role">Talent Acquisition Specialist</p>
+            </div>
+          </div>
+          <p class="card-desc">AI-assisted sales recruitment for global Timeshare and Vacation Club clients. Sourced, screened and brought 10+ qualified candidates through to the hiring manager for roles based in Bali.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">10+</span><span class="exp-metric-lab">Candidates placed</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">5</span><span class="exp-metric-lab">Sourcing channels</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="pill">Clay.com</span>
+            <span class="pill">Recruitment</span>
+          </div>
+          <a class="card-link" href="freelance.html#dreamsales">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb g4">
+          <span class="card-thumb-mono">Bali Invest<br>Real Estate</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="BI" style="--logo-a:#431407;--logo-b:#ea580c" aria-hidden="true"><img src="assets/logos/baliinvest.png" alt="Bali Invest Real Estate logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <p class="card-date">Jan 2024 - Present</p>
+              <p class="card-title">Bali Invest Real Estate</p>
+              <p class="card-role">Partnership &amp; KOL Manager</p>
+            </div>
+          </div>
+          <p class="card-desc">Influencer and content partnerships for a luxury real estate brand, structured as barter collaborations. Led the Beyond Bali YouTube villa tour series end to end, from location sourcing to publication.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">Beyond Bali</span><span class="exp-metric-lab">YouTube series led</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">Barter</span><span class="exp-metric-lab">Deal structure</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="badge-progress">Current</span>
+            <span class="pill">KOL</span>
+            <span class="pill">YouTube</span>
+          </div>
+          <div class="ext-links">
+            <a class="ext-link" href="https://www.instagram.com/segaraseaside/reels/" target="_blank" rel="noopener noreferrer" aria-label="Segara Seaside reels on Instagram">
+              <svg class="ig" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.98c-3.15 0-3.5.01-4.74.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.4.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.39-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32-1.24-.06-1.59-.07-4.74-.07Zm0 3.37a4.49 4.49 0 1 1 0 8.98 4.49 4.49 0 0 1 0-8.98Zm0 7.4a2.91 2.91 0 1 0 0-5.82 2.91 2.91 0 0 0 0 5.82Zm5.72-7.6a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"/></svg><span>@segaraseaside reels</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a class="ext-link" href="https://www.instagram.com/bali.invest.official/" target="_blank" rel="noopener noreferrer" aria-label="Bali Invest on Instagram">
+              <svg class="ig" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.98c-3.15 0-3.5.01-4.74.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.4.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.39-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32-1.24-.06-1.59-.07-4.74-.07Zm0 3.37a4.49 4.49 0 1 1 0 8.98 4.49 4.49 0 0 1 0-8.98Zm0 7.4a2.91 2.91 0 1 0 0-5.82 2.91 2.91 0 0 0 0 5.82Zm5.72-7.6a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"/></svg><span>@bali.invest.official</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+          <a class="card-link" href="freelance.html#baliinvest">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-thumb g5">
+          <span class="card-thumb-mono">+40%</span>
+          <span class="card-thumb-label" style="position:absolute;bottom:.75rem;left:0;right:0">Engagement growth</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="Z" style="--logo-a:#0c4a6e;--logo-b:#06b6d4" aria-hidden="true"><img src="assets/logos/zeros.png" alt="Zeros GmbH logo" data-fit="cover" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <p class="card-date">Mar 2025 - Jul 2025</p>
+              <p class="card-title">Zeros GmbH</p>
+              <p class="card-role">Social Media Manager</p>
+            </div>
+          </div>
+          <p class="card-desc">Ran 10+ Instagram and TikTok accounts at once, managing content and account health, including VPN-based regional access and recovering accounts from shadowbans.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">10+</span><span class="exp-metric-lab">Accounts managed</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">+40%</span><span class="exp-metric-lab">Engagement</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">Multiple</span><span class="exp-metric-lab">Shadowban recoveries</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="pill">Instagram</span>
+            <span class="pill">TikTok</span>
+            <span class="pill">Account health</span>
+          </div>
+          <a class="card-link" href="freelance.html#zeros">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb g7">
+          <span class="card-thumb-mono">Targets<br>surpassed</span>
+          <span class="card-thumb-label" style="position:absolute;bottom:.75rem;left:0;right:0">Monthly engagement &amp; performance</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="BMA" style="--logo-a:#1e1b4b;--logo-b:#6366f1" aria-hidden="true"></span>
+            <div>
+              <p class="card-date">Oct 2024 - Jan 2025</p>
+              <p class="card-title">Besa Management Agency</p>
+              <p class="card-role">Sales Customer Relationship Officer</p>
+            </div>
+          </div>
+          <p class="card-desc">Primary contact for subscribers on behalf of a digital talent agency in London, managing accounts, answering enquiries and driving long-term retention. Coordinated client communications across a fully remote team.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">Monthly</span><span class="exp-metric-lab">Targets surpassed</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">London</span><span class="exp-metric-lab">UK, remote</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="pill">Account management</span>
+            <span class="pill">Retention</span>
+            <span class="pill">CS</span>
+          </div>
+          <a class="card-link" href="freelance.html">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb g8">
+          <span class="card-thumb-mono">Talent</span>
+          <span class="card-thumb-label" style="position:absolute;bottom:.75rem;left:0;right:0">Bookings &amp; brand partnerships</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="MM" style="--logo-a:#422006;--logo-b:#ca8a04" aria-hidden="true"></span>
+            <div>
+              <p class="card-date">Feb 2025 - Jun 2025</p>
+              <p class="card-title">Market Makers Enterprises</p>
+              <p class="card-role">Model Manager</p>
+            </div>
+          </div>
+          <p class="card-desc">Managed talent relationships for the agency: model schedules, bookings and day-to-day communications, and supported brand partnerships so representation matched what each client and campaign needed.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">Talent</span><span class="exp-metric-lab">Relationship management</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">Part-time</span><span class="exp-metric-lab">Remote</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="pill">Talent</span>
+            <span class="pill">Bookings</span>
+            <span class="pill">Partnerships</span>
+          </div>
+          <a class="card-link" href="freelance.html">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb g7">
+          <span class="card-thumb-mono">CPA &middot; CPC<br>Hybrid</span>
+          <span class="card-thumb-label" style="position:absolute;bottom:.75rem;left:0;right:0">Affiliate deal models</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <span class="logo" data-mono="VD" style="--logo-a:#1e1b4b;--logo-b:#6366f1" aria-hidden="true"><img src="assets/logos/vitality.png" alt="Vitality Development logo" loading="lazy" onerror="this.style.display='none'"></span>
+            <div>
+              <p class="card-date">Jan 2023 - Jul 2023</p>
+              <p class="card-title">Vitality Development</p>
+              <p class="card-role">Executive Assistant to CEO &amp; Affiliate Manager</p>
+            </div>
+          </div>
+          <p class="card-desc">Ran affiliate programmes end to end for Tier 1 crypto iGaming projects, negotiating CPA, CPC and hybrid deals and handling affiliate relationships daily over Skype and Telegram.</p>
+          <div class="exp-metrics">
+            <span class="exp-metric"><span class="exp-metric-num">3</span><span class="exp-metric-lab">Commission models</span></span>
+            <span class="exp-metric"><span class="exp-metric-num">Tier 1</span><span class="exp-metric-lab">iGaming projects</span></span>
+          </div>
+          <div class="card-meta">
+            <span class="pill">Affiliate</span>
+            <span class="pill">iGaming</span>
+            <span class="pill">Negotiation</span>
+          </div>
+          <a class="card-link" href="freelance.html#vitality">
+            <span>Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <div style="margin-top:1.5rem">
+      <a class="btn-ghost" href="freelance.html">
+        <span>Explore 10+ engagements</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ TECHNOLOGIES ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="section-title">Technologies</p>
+      <a class="link-more" href="tools.html">
+        <span>View All</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+    <p class="prose" style="margin:-.5rem 0 1.25rem">
+      Forty-two tools across AI &amp; automation, CRM &amp; outreach, project management, marketing &amp; design, and
+      community &amp; Web3. <a class="inline-link" href="tools.html">View all</a> for the full breakdown by discipline.
+    </p>
+
+    <div class="tech-wrap">
+      <div class="tech-lane">
+        <div class="tech-track all">
+          <span class="tech-chip"><span class="tech-dot" style="background:#d97757"></span>Claude</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#10a37f"></span>ChatGPT</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#0084ff"></span>ManyChat</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#7c3aed"></span>Success.ai</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#4f46e5"></span>Instantly</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#f97316"></span>Clay.com</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#ff7a59"></span>HubSpot</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#2563eb"></span>Apollo</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#7c5cff"></span>Customer.io</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#0b996e"></span>Brevo</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#1f8dff"></span>Omnisend</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#ff3d71"></span>inFloww</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#64748b"></span>Tally</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#25d366"></span>WhatsApp Business</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#0a66c2"></span>LinkedIn Recruiter</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#ff3d57"></span>Monday.com</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#f06a6a"></span>Asana</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#0052cc"></span>Jira</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#94a3b8"></span>Notion</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#7b68ee"></span>ClickUp</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#0079bf"></span>Trello</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#611f69"></span>Slack</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#ffd02f"></span>Miro</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#8b5cf6"></span>Whimsical</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#006bff"></span>Calendly</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#f7b500"></span>Luma</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#06b6d4"></span>Zaflow.io</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#ea4335"></span>Google Workspace</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#d83b01"></span>Microsoft 365</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#0866ff"></span>Meta Ads</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#00c4cc"></span>Canva</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#5b53ff"></span>Frame.io</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#22d3ee"></span>CapCut</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#ff0000"></span>YouTube Studio</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#31a8ff"></span>Adobe Photoshop</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#21759b"></span>WordPress</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#96588a"></span>WooCommerce</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#5865f2"></span>Discord</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#10b981"></span>Bot Automation</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#26a5e4"></span>Telegram</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#f7931a"></span>DeFi Platforms</span>
+          <span class="tech-chip"><span class="tech-dot" style="background:#059669"></span>KYC/AML Tools</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPETENCIES ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="section-title">Key Competencies</p>
+      <span class="eyebrow">What I Bring</span>
+    </div>
+    <p class="prose" style="margin:-.5rem 0 1.5rem">
+      Fourteen things I'm reliably good at, each with the moment that proves it.
+    </p>
+    <div class="cap-grid">
+      <article class="cap" style="--cap-a:#1d9bf0;--cap-b:#7c5cff">
+        <span class="cap-num">01</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🤝</span>
+          <h3 class="cap-title">Strategic Partnerships & Alliances</h3>
+        </div>
+        <p class="cap-body">At <strong>Digital Online Empire</strong> I built the Bali Card partner network from a blank list to <strong>300+ verified venues</strong>, from Buleleng to Nusa Penida. I mapped the island by category, pitched each owner on the membership value rather than a discount, and negotiated terms that made renewals easy. The network became the product.</p>
+      </article>
+      <article class="cap" style="--cap-a:#16a34a;--cap-b:#06b6d4">
+        <span class="cap-num">02</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🌱</span>
+          <h3 class="cap-title">Community Growth & Retention</h3>
+        </div>
+        <p class="cap-body">I joined <strong>Fleamint</strong> at inception with no community at all. I built the Discord architecture, onboarding flow and activation calendar from scratch, taking it to <strong>5,000+ members</strong> with <strong>30% engagement growth</strong>, then kept them by making sure every new member had something to do in their first ten minutes.</p>
+      </article>
+      <article class="cap" style="--cap-a:#f97316;--cap-b:#e11d48">
+        <span class="cap-num">03</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🚀</span>
+          <h3 class="cap-title">Go-to-Market Strategy</h3>
+        </div>
+        <p class="cap-body">For the Bali Card launch I sequenced the go-to-market backwards: sign the venues first, so the offer was already worth buying on day one. Partner supply, content and the membership push went live together, which meant launch demand met a network that could actually serve it.</p>
+      </article>
+      <article class="cap" style="--cap-a:#7c3aed;--cap-b:#2563eb">
+        <span class="cap-num">04</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🤖</span>
+          <h3 class="cap-title">CRM & AI Automation</h3>
+        </div>
+        <p class="cap-body">At <strong>Dream Sales Jobs</strong> I replaced manual recruiter follow-up with automated sequences wired into Tally, Clay.com, LinkedIn and WhatsApp. Applications, qualification and reminders now run themselves, and the hours that used to go into chasing candidates go into actually talking to them.</p>
+      </article>
+      <article class="cap" style="--cap-a:#0ea5e9;--cap-b:#8b5cf6">
+        <span class="cap-num">05</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">⚙️</span>
+          <h3 class="cap-title">Operational Excellence</h3>
+        </div>
+        <p class="cap-body">At <strong>WomenTech Network</strong> consistency was the bottleneck, not effort. I wrote the operational templates and playbooks the team runs on (event checklists, partner outreach sequences, reporting formats) so quality stopped depending on who happened to pick up the task.</p>
+      </article>
+      <article class="cap" style="--cap-a:#ec4899;--cap-b:#f59e0b">
+        <span class="cap-num">06</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">📣</span>
+          <h3 class="cap-title">Influencer & KOL Management</h3>
+        </div>
+        <p class="cap-body">At <strong>Rio-De-Fi</strong> I ran KOL partnerships end to end and opened conversations with artists at the level of <strong>Lupe Fiasco and Jason Derulo</strong>. The work was less about the booking and more about the brief: making sure each creator understood the project well enough that the content sounded like them, not like an ad.</p>
+      </article>
+      <article class="cap" style="--cap-a:#0891b2;--cap-b:#4f46e5">
+        <span class="cap-num">07</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🏗️</span>
+          <h3 class="cap-title">B2B Ecosystem Development</h3>
+        </div>
+        <p class="cap-body">Supporting <strong>9,000+ Global Ambassadors and 70,000+ tech leaders</strong> at WomenTech meant treating the network as an ecosystem rather than a list. I built the connective tissue (intro paths, regional leads, recognition loops) so members created value for each other instead of only consuming it.</p>
+      </article>
+      <article class="cap" style="--cap-a:#d97706;--cap-b:#dc2626">
+        <span class="cap-num">08</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">📅</span>
+          <h3 class="cap-title">Campaign & Event Marketing</h3>
+        </div>
+        <p class="cap-body">I moderated webinars with the <strong>CEO of Xendit</strong>, the <strong>CEO of HP Indonesia</strong> and the <strong>CCO of Magicblocks.ai</strong>, and hosted community Twitter Spaces for Fleamint. Speaker sourcing, run-of-show and the follow-up content were all mine. The event is only half the campaign.</p>
+      </article>
+      <article class="cap" style="--cap-a:#059669;--cap-b:#0ea5e9">
+        <span class="cap-num">09</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">👥</span>
+          <h3 class="cap-title">Stakeholder Relations</h3>
+        </div>
+        <p class="cap-body">As EA to the CEO at <strong>Vitality Development</strong> I sat between the founder, affiliates and Tier 1 crypto iGaming partners. Reading the room, protecting the founder's time and translating between very different audiences is a skill I've used in every role since.</p>
+      </article>
+      <article class="cap" style="--cap-a:#e11d48;--cap-b:#7c3aed">
+        <span class="cap-num">10</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🎯</span>
+          <h3 class="cap-title">Talent Acquisition & Sales Recruitment</h3>
+        </div>
+        <p class="cap-body">I onboarded <strong>600+ UGC creators</strong> for a swimwear agency: sourcing, pitching, negotiating rates and running the full onboarding lifecycle. Balancing creator pay against agency margin without souring the relationship is the whole job, and it's the part I enjoy.</p>
+      </article>
+      <article class="cap" style="--cap-a:#8b5cf6;--cap-b:#ec4899">
+        <span class="cap-num">11</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">📱</span>
+          <h3 class="cap-title">Social Media Strategy & Content</h3>
+        </div>
+        <p class="cap-body">For <strong>Daydream Community</strong> I built a Bitcoin educator's Instagram presence from zero across Carousels, Reels, Stories and YouTube, and owned the workflow end to end: ideation, scripting, editing, publishing. Consistent cadence in the founder's own voice, not a content mill.</p>
+      </article>
+      <article class="cap" style="--cap-a:#f59e0b;--cap-b:#1d9bf0">
+        <span class="cap-num">12</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🗣️</span>
+          <h3 class="cap-title">Negotiation & Deal Closing</h3>
+        </div>
+        <p class="cap-body">Whether it's a venue joining Bali Card, a creator agreeing a rate, or a prospect booking a discovery call, my approach is the same: understand what the other side actually needs first. I've closed hundreds of agreements this way, and the relationships tend to outlast the deal.</p>
+      </article>
+      <article class="cap" style="--cap-a:#14b8a6;--cap-b:#0ea5e9">
+        <span class="cap-num">13</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🧩</span>
+          <h3 class="cap-title">Creative Problem Solving</h3>
+        </div>
+        <p class="cap-body">Two clients came to me with Instagram accounts that had quietly stopped reaching anyone. I diagnosed the <strong>shadowbans</strong>, rebuilt the posting cadence, reworked hashtag strategy and content mix, and got organic reach back. Same instinct at <strong>Digital Online Empire</strong> and <strong>Fleamint</strong>: when manual moderation stopped scaling, I built Discord bot automation instead of hiring around the problem.</p>
+      </article>
+      <article class="cap" style="--cap-a:#f59e0b;--cap-b:#ef4444">
+        <span class="cap-num">14</span>
+        <div class="cap-head">
+          <span class="cap-ico" aria-hidden="true">🔍</span>
+          <h3 class="cap-title">Analytical Thinking</h3>
+        </div>
+        <p class="cap-body">Four and a half years on a bank's front line, <strong>200+ customers a day</strong>, teaches you to read a situation fast and still get the detail right under pressure. I work the same way now: retention and engagement KPIs at <strong>WomenTech</strong>, A/B testing at <strong>DankCity</strong>, and checking what the numbers actually say before changing the plan.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="section-title">Education</p>
+      <a class="link-more" href="credentials.html">
+        <span>View All</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+    <div class="cred-list">
+      <div class="cred-row">
+        <p class="exp-date">2018 - 2022</p>
+        <div>
+          <p class="cred-title">Bachelor of Communication Science</p>
+          <p class="cred-sub">The Open University of Indonesia · Jakarta</p>
+          <p class="cred-note">GPA 3.07 / 4.00</p>
+        </div>
+      </div>
+      <div class="cred-row">
+        <p class="exp-date">Certificates</p>
+        <div>
+          <div class="proof-strip">
+            <button type="button" class="shot" data-full="assets/work/cert-bachelor.jpg" data-cap="Diploma Supplement, Bachelor of Communication Science (Sarjana Ilmu Komunikasi, S.I.Kom.), Universitas Terbuka, graduated 21 April 2022. Personal identifiers are blurred.">
+            <img class="shot-img" src="assets/work/thumbs/cert-bachelor.jpg" alt="Bachelor of Communication Science diploma supplement" loading="lazy">
+            <span class="shot-cap">BA Communication Science</span>
+            </button>
+            </div>
+        </div>
+      </div>
+      <div class="cred-row">
+        <p class="exp-date">Languages</p>
+        <div class="lang-list">
+          <span class="pill-lg">🇮🇩 Indonesian (Native)</span>
+          <span class="pill-lg">🇬🇧 English (C1)</span>
+          <span class="pill-lg">🇸🇦 Arabic (Read/Write)</span>
+          <span class="pill-lg">🇷🇺 Russian (Beginner)</span>
+          <span class="pill-lg">🇫🇷 French (Beginner)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUTSIDE WORK ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="section-title">Outside of Work</p>
+    </div>
+    <div class="split center">
+      <div>
+        <p class="prose">
+          I keep moving: sports, workouts, painting, 10km beach walks, designing costumes, playing guitar, singing and
+          creating art. Movement and making things is how I recharge, and it feeds straight back into the creative side
+          of my work.
+        </p>
+        <div class="pill-row" style="margin-top:1.25rem">
+          <span class="pill-lg">Painting</span>
+          <span class="pill-lg">Guitar</span>
+          <span class="pill-lg">Sports</span>
+          <span class="pill-lg">Costume Design</span>
+          <span class="pill-lg">Karaoke</span>
+          <span class="pill-lg">Beach Walks</span>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <p class="fact-k">Based In</p>
+          <p class="fact-v">Bali, Indonesia</p>
+        </div>
+        <div class="fact">
+          <p class="fact-k">Open To</p>
+          <p class="fact-v">Relocation · UK / EU / EMEA · Global Remote</p>
+        </div>
+        <div class="fact">
+          <p class="fact-k">Work Authorisation</p>
+          <p class="fact-v">Indonesian passport · visa sponsorship required</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section reveal" id="contact">
+    <div class="section-head">
+      <p class="section-title">Let's work together.</p>
+    </div>
+    <div class="split">
+      <div>
+        <p class="prose">
+          Open to strategic roles in partnerships, community growth and marketing, globally remote or based in
+          UK / EU / EMEA. Willing to relocate. I hold an Indonesian passport and would need visa sponsorship
+          for a role based in the UK or EU.
+        </p>
+      </div>
+      <div class="contact-cards">
+        <a class="contact-card" href="mailto:Wlnwinata.work@gmail.com">
+          <div class="contact-left">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </div>
+            <div style="min-width:0">
+              <span class="contact-k">Email</span>
+              <p class="contact-v">Wlnwinata.work@gmail.com</p>
+            </div>
+          </div>
+          <svg class="contact-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="contact-card" href="https://wa.me/6282213758285" target="_blank" rel="noopener noreferrer">
+          <div class="contact-left">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            </div>
+            <div style="min-width:0">
+              <span class="contact-k">Indonesia</span>
+              <p class="contact-v">+62 822-1375-8285</p>
+            </div>
+          </div>
+          <svg class="contact-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="contact-card" href="tel:+4915755994057">
+          <div class="contact-left">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            </div>
+            <div style="min-width:0">
+              <span class="contact-k">Europe</span>
+              <p class="contact-v">+49 1575 5994057</p>
+            </div>
+          </div>
+          <svg class="contact-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/wulanzein" target="_blank" rel="noopener noreferrer">
+          <div class="contact-left">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05a3.75 3.75 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+            </div>
+            <div style="min-width:0">
+              <span class="contact-k">LinkedIn</span>
+              <p class="contact-v">linkedin.com/in/wulanzein</p>
+            </div>
+          </div>
+          <svg class="contact-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note">
+      © 2026 Wulan Winata · Strategic Partnerships &amp; Community Growth Manager · Bali, Indonesia · Open to Relocate ·
+      UK / EU / EMEA &amp; Global Remote
+    </p>
+  </div>
+</footer>
+
+<!-- Floating glass dock -->
+<div class="dock" role="navigation" aria-label="Quick contact">
+  <a class="dock-btn li" href="https://linkedin.com/in/wulanzein" target="_blank" rel="noopener noreferrer">
+    <svg class="dock-glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05a3.75 3.75 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+    <span>LinkedIn</span>
+    <svg class="dock-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+  </a>
+  <div class="dock-sep"></div>
+  <a class="dock-btn em" href="mailto:Wlnwinata.work@gmail.com">
+    <svg class="dock-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+    <span>Email</span>
+    <svg class="dock-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+  </a>
+</div>
+
+
+
+<div id="trans-fraud" class="trans-src" hidden>
+  <p class="trans-tag">English translation (unofficial). The certificate itself is in Indonesian and is shown unaltered above.</p>
+  <dl class="trans-dl">
+    <dt>Document</dt><dd>Certificate of Achievement</dd>
+    <dt>Awarded to</dt><dd>Wulan Winata</dd>
+    <dt>Training</dt><dd>Recognising and Avoiding Fraud for Bank Staff and Customers (anti-fraud training)</dd>
+    <dt>Issued by</dt><dd>Bee3 Consulting, Jakarta, 29 February 2020</dd>
+    <dt>Signed</dt><dd>Lita Bakhtiar, Director, Bee3 Consulting</dd>
+  </dl>
+</div>
+
+<!-- Lightbox -->
+<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button type="button" class="lbx-btn lbx-close" id="lbxClose" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <button type="button" class="lbx-btn lbx-prev" id="lbxPrev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <button type="button" class="lbx-btn lbx-next" id="lbxNext" aria-label="Next image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+  <figure class="lbx-fig">
+    <img class="lbx-img" id="lbxImg" src="" alt="">
+    <figcaption class="lbx-cap" id="lbxCap"></figcaption>
+    <div class="lbx-trans" id="lbxTrans" hidden></div>
+    <p class="lbx-count" id="lbxCount"></p>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var shots = Array.prototype.slice.call(document.querySelectorAll(".shot"));
+  if (!shots.length) return;
+  var box = document.getElementById("lbx"),
+      img = document.getElementById("lbxImg"),
+      cap = document.getElementById("lbxCap"),
+      num = document.getElementById("lbxCount"),
+      trans = document.getElementById("lbxTrans"),
+      i = 0, last = null;
+
+  function show(n) {
+    i = (n + shots.length) % shots.length;
+    var b = shots[i];
+    img.src = b.getAttribute("data-full");
+    img.alt = b.getAttribute("data-cap") || "";
+    cap.textContent = b.getAttribute("data-cap") || "";
+    num.textContent = (i + 1) + " / " + shots.length;
+    var tid = b.getAttribute("data-trans"), src = tid && document.getElementById(tid);
+    if (src) { trans.innerHTML = src.innerHTML; trans.hidden = false; }
+    else { trans.innerHTML = ""; trans.hidden = true; }
+  }
+  function open(n) {
+    last = document.activeElement;
+    show(n);
+    box.classList.add("on");
+    document.body.style.overflow = "hidden";
+    document.getElementById("lbxClose").focus();
+  }
+  function close() {
+    box.classList.remove("on");
+    document.body.style.overflow = "";
+    img.src = "";
+    if (last && last.focus) last.focus();
+  }
+  shots.forEach(function (b, n) { b.addEventListener("click", function () { open(n); }); });
+  document.getElementById("lbxClose").addEventListener("click", close);
+  document.getElementById("lbxPrev").addEventListener("click", function () { show(i - 1); });
+  document.getElementById("lbxNext").addEventListener("click", function () { show(i + 1); });
+  box.addEventListener("click", function (e) { if (e.target === box) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (!box.classList.contains("on")) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowRight") show(i + 1);
+    else if (e.key === "ArrowLeft") show(i - 1);
+  });
+})();
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>
